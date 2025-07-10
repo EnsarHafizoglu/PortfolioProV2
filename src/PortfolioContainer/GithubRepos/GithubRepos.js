@@ -37,7 +37,7 @@ export default function GithubRepos(props) {
     <div>
       <ScreenHeading
         title="GitHub Repositories"
-        subHeading="Kamu Çalışmalarımdan Bazıları"
+        subHeading="Some of my GitHub repos"
       />
    <section className="github-section fade-in" id={props.id || ""}>
   <div className="repo-count-wrapper">
@@ -63,7 +63,7 @@ export default function GithubRepos(props) {
         {repos.length > 6 && (
           <div className="github-toggle">
             <button onClick={() => setShowAll(!showAll)}>
-              {showAll ? "Daha Az Göster" : "Daha Fazla Göster"}
+              {showAll ? "Show Less" : "Show More"}
             </button>
           </div>
         )}

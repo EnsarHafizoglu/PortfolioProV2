@@ -25,7 +25,7 @@ export default function Testimonial(props) {
     },
 
     {
-      name: "Yaşar Uğur PABUCCU",
+      name: "Yaşar Uğur PABUÇCU",
       role: "Product Owner",
       company: "Architecht",
       image: YaşarUğur,
@@ -33,13 +33,13 @@ export default function Testimonial(props) {
 
     {
       name: "Mustafa CAN",
-      role: "SOftware Engineer",
+      role: "Software Engineer",
       company: "Architecht",
       image: DefaultProfilePhoto,
     },
      {
       name: "Enes Yıldız",
-      role: "SOftware Engineer",
+      role: "Software Engineer",
       company: "Architecht",
       image: DefaultProfilePhoto,
     },
@@ -49,7 +49,7 @@ export default function Testimonial(props) {
     <div>
       <ScreenHeading
         title={"Testimonial"}
-        subHeading={"People I've Worked With"}
+        subHeading={"Peaple who reference me"}
       />
       <section className="testimonial-section fade-in" id={props.id || ""}>
         <div className="container testimonial-grid">
