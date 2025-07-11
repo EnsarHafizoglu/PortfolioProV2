@@ -1,0 +1,143 @@
+{
+  "greeting": "Merhaba Ben",
+  "role1": "Full Stack Geliştirici",
+  "role2": "Junior Geliştirici 💻",
+  "about": "Merhaba! Ben Konya Teknik Üniversitesi'nde Yazılım Mühendisliği öğrencisiyim. Aynı zamanda Architecht'te yarı zamanlı full stack geliştirici olarak çalışıyor, teorik bilgimi gerçek dünya projeleriyle pekiştiriyorum. Web geliştirme alanında kendimi sürekli geliştiriyor; kullanıcı odaklı, hızlı ve ölçeklenebilir çözümler üretmeye odaklanıyorum. Modern teknolojilere ilgiyle yaklaşıyor, edindiğim bilgi ve becerileri projelerimde etkin bir şekilde kullanmaya özen gösteriyorum.",
+  "contactMe": "İletişim Kur",
+  "downloadCV": "CV İndir",
+  "aboutMe": {
+    "title": "Hakkımda",
+    "subHeading": "Neden Ben?",
+    "description": "Frontend, backend ve veritabanı alanlarında edindiğim bilgi ve deneyimlerle projelerde uçtan uca çözümler geliştirmeye odaklanıyorum. Kod kalitesi, performans ve sürdürülebilirlik konularında titizlikle çalışıyor; takım içi iş birliği ve sürekli öğrenme yaklaşımıyla teknik yetkinliğimi her geçen gün ileriye taşıyorum. Gerçek projelerde aktif rol alarak teorik bilgilerimi pratiğe dönüştürme fırsatı buluyorum.",
+    "heading": "İşte Öne Çıkan Bazı Yeteneklerim:",
+    "bullet1": "Full Stack Web Geliştirme",
+    "bullet2": "Duyarlı (Responsive) ve Etkileşimli Ön Yüz Tasarımı",
+    "bullet3": "HTML, CSS, JavaScript ve Bootstrap Kullanımı",
+    "bullet4": "React ile Modern Web Uygulamaları Geliştirme",
+    "bullet5": "React Hooks ve Bileşen (Component) Tabanlı Mimari",
+    "bullet6": "ASP.NET Core ve MVC Framework ile Backend Geliştirme",
+    "bullet7": "Microsoft SQL Server ile Veritabanı Yönetimi",
+    "bullet8": "Yazılım Geliştirme Yaşam Döngüsü (SDLC) Konusunda Bilgi",
+    "bullet9": "Agile ve Scrum Metodolojileri ile Çalışma Deneyimi",
+    "bullet10": "Versiyon Kontrol Sistemleri (Git, GitHub) Kullanımı",
+    "bullet11": "Problem Çözme ve Algoritma Geliştirme Yetkinliği"
+  },
+  "certificates": {
+    "title": "Sertifikalar",
+    "subHeading": "Bazı Sertifikalarım",
+    "issuedBy": "Düzenleyen",
+    "date": "Tarih",
+    "gainsTitle": "Kazanımlarım 🧑‍💻",
+    "total": "Toplam {{count}} adet sertifika bulunmaktadır.",
+    "cert1": {
+      "title": "Code The Future Katılım Sertifikası",
+      "organization": "BadiWorks & Öğrenci Kariyeri",
+      "description": "Teknoloji sektöründeki uzman kişiler ile öğrencileri buluşturan Code The Future zirvesine katılım sağladım.",
+      "gains": ["Teknoloji Sektörü", "Networking", "Kariyer Gelişimi", "Yenilikçi Çözümler"]
+    },
+    "cert2": {
+      "title": "Git ve GitHub Katılım Sertifikası",
+      "organization": "BTK Akademi",
+      "description": "BTK Akademi tarafından düzenlenen 'Versiyon Kontrolleri: Git ve GitHub' çevrim içi eğitimini tamamladım.",
+      "gains": ["Git", "GitHub", "Versiyon Kontrolü", "Repo Yönetimi"]
+    },
+    "cert3": {
+      "title": "Komple Uygulamalı Web Geliştirme Eğitimi | .NET",
+      "organization": "Udemy",
+      "description": "Backend ve frontend teknolojilerini entegre ederek ölçeklenebilir, dinamik web uygulamaları geliştirme konusunda pratik yaptım. ASP.NET Core, MVC, RESTful API'ler, Entity Framework, SQL Server, Authentication & Authorization gibi konulara hakim oldum.",
+      "gains": [".NET Core", "ASP.NET MVC", "RESTful API", "Entity Framework", "SQL Server", "Kimlik Doğrulama ve Yetkilendirme", "Frontend Entegrasyonu", "Proje Bazlı Geliştirme"]
+    },
+    "cert4": {
+      "title": "Bilgi Teknolojileri Oryantasyon Programı - Yazılımcı",
+      "organization": "Kuveyt Türk Akademi",
+      "description": "Kurumsal yazılım geliştirme, teknoloji ekosistemi ve iş akış yönetimi üzerine bilgi edindim.",
+      "gains": ["Kurumsal Yazılım Geliştirme", "Teknoloji Ekosistemi", "İş Akış Yönetimi", "BT Süreçleri"]
+    },
+    "cert5": {
+      "title": "Bilgi Teknolojileri Oryantasyon Programı - Genel",
+      "organization": "Kuveyt Türk Akademi",
+      "description": "Bankacılık teknolojileri, kurumsal BT süreçleri ve iş akışları hakkında temel bilgiler edindim.",
+      "gains": ["Bankacılık Teknolojileri", "Kurumsal BT Süreçleri", "İş Akış Yönetimi", "Dijital Eğitim ve Gelişim"]
+    },
+    "cert6": {
+      "title": "SQL Kursu: Sıfırdan Sektörün Yükseklerine",
+      "organization": "Udemy",
+      "description": "SQL veritabanı yönetimi, veri analizi ve gelişmiş sorgulamalar hakkında pratik beceriler kazandım.",
+      "gains": ["SQL", "Veri Analizi", "İlişkisel Veritabanı", "Gelişmiş SQL Sorguları", "Veri Manipülasyonu"]
+    },
+    "cert7": {
+      "title": "İş Kulübü Katılım Belgesi",
+      "organization": "Türkiye İş Kurumu (İŞKUR)",
+      "description": "İş arama süreçleri, kariyer planlama, mülakat teknikleri ve iş dünyasında başarılı olma konularında bilgi edindim.",
+      "gains": ["Kariyer Planlama", "İş Arama Teknikleri", "Mülakat Stratejileri", "Profesyonel Gelişim"]
+    },
+    "cert8": {
+      "title": "(42 Saat) Sıfırdan Komple Java Geliştirici Kursu",
+      "organization": "Udemy",
+      "description": "Java programlamayı sıfırdan ileri seviyeye kadar öğrenerek OOP ve uygulama geliştirme pratiği yaptım.",
+      "gains": ["Java Temelleri", "Nesne Yönelimli Programlama", "Uygulama Geliştirme", "Programlama Pratikleri"]
+    },
+    "cert9": {
+      "title": "C# Programlama Dili: Her Seviyeye Hitap Eden Eğitim",
+      "organization": "Udemy",
+      "description": "C# dilinde konsol ve Windows uygulamaları geliştirme konularında pratikler yaptım.",
+      "gains": ["C# Temelleri", "Nesne Tabanlı Programlama", "Uygulama Geliştirme", "Veritabanı Bağlantıları"]
+    },
+    "cert10": {
+      "title": "Cursor ile .NET'te Kurumsal Proje Geliştirme",
+      "organization": "Udemy",
+      "description": ".NET mimarisi kullanarak kurumsal projeler geliştirme süreçlerine dair bilgi ve deneyim kazandım.",
+      "gains": [".NET Mimarisi", "Katmanlı Mimari", "Kurumsal Uygulama Geliştirme", "Proje Yönetimi"]
+    },
+    "cert11": {
+      "title": "(25+ Saat) C | Sıfırdan İleri Seviyeye Uygulamalı Programlama",
+      "organization": "Udemy",
+      "description": "C dili ile algoritma geliştirme, bellek yönetimi ve uygulamalı projeler yaptım.",
+      "gains": ["C Temelleri", "Bellek Yönetimi", "Algoritma Geliştirme", "Uygulamalı Projeler"]
+    },
+    "cert12": {
+      "title": "Design Patterns",
+      "organization": "Udemy",
+      "description": "Yazılım geliştirmede tasarım desenlerini öğrenerek kod kalitesini ve sürdürülebilirliği artırmayı öğrendim.",
+      "gains": ["Yapısal, Davranışsal ve Yaratımsal Desenler", "Kod Kalitesi", "Sürdürülebilir Geliştirme", "Tasarım İlkeleri"]
+    }
+  },
+  
+  "contact": {
+    "title": "Bana Ulaş",
+    "subHeading": "İletişimde Kalalım",
+    "getInTouch": "İletişime Geç 📧",
+    "sendEmailHere": "E-postanı Buradan Gönder!",
+    "name": "Ad Soyad",
+    "email": "E-posta",
+    "message": "Mesaj",
+    "send": "Gönder",
+    "sending": "Gönderiliyor...",
+    "success": "Geri bildiriminiz başarıyla gönderildi.",
+    "errors": {
+      "fillAllFields": "Lütfen tüm alanları doldurun!",
+      "tryAgain": "Bir hata oluştu. Lütfen tekrar deneyin."
+    }
+  },
+   "github": {
+    "title": "GitHub Depoları",
+    "subHeading": "Bazı GitHub depolarım",
+    "totalRepos": "Bazı GitHub depolarım",
+    "noDescription": "Açıklama yok",
+    "showMore": "Daha Fazla Göster",
+    "showLess": "Daha Az Göster"
+  },
+   "header": {
+    "Home": "Ana Sayfa",
+    "AboutMe": "Hakkımda",
+    "Resume": "Özgeçmiş",
+    "GithubRepos": "GitHub Depoları",
+    "Certificates": "Sertifikalar",
+    "ContactMe": "İletişim Kur",
+    "Testimonial" : "Referanslar"
+  }
+
+
+
+  
+}

@@ -1,13 +1,18 @@
-import React from 'react';
-import { useTranslation } from 'react-i18next';
+import i18n from 'i18next';
 
 function LanguageSwitcher() {
-  const { i18n } = useTranslation();
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
 
   return (
-    <div style={{ margin: '1rem 0' }}>
-      <button onClick={() => i18n.changeLanguage('tr')}>Türkçe</button>
-      <button onClick={() => i18n.changeLanguage('en')}>English</button>
+    <div style={{ display: 'flex', justifyContent: 'flex-end', padding: '10px' }}>
+      <button onClick={() => changeLanguage('en')} style={{ marginRight: '10px' }}>
+        English
+      </button>
+      <button onClick={() => changeLanguage('tr')}>
+        Türkçe
+      </button>
     </div>
   );
 }

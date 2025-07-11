@@ -1,34 +1,22 @@
-import i18n from "i18next";
-import { initReactI18next } from "react-i18next";
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+import translationEN from './locales/en/en.json';
+import translationTR from './locales/tr/tr.json';
 
 const resources = {
-  en: {
-    translation: {
-      "Home": "Home",
-      "About": "About",
-      "Projects": "Projects",
-      "Contact": "Contact",
-      "Portfolio": "Portfolio",
-    }
-  },
-  tr: {
-    translation: {
-      "Home": "Ana Sayfa",
-      "About": "Hakkımda",
-      "Projects": "Projeler",
-      "Contact": "İletişim",
-      "Portfolio": "Portföy",
-    }
-  }
+  en: { translation: translationEN },
+  tr: { translation: translationTR }
 };
 
 i18n
   .use(initReactI18next)
   .init({
     resources,
-    lng: "en", // Başlangıç dili
-    fallbackLng: "en", // Eğer dil bulunamazsa İngilizce kullan
-    interpolation: { escapeValue: false }
+    lng: 'en', // varsayılan dil
+    fallbackLng: 'en',
+    interpolation: {
+      escapeValue: false // React zaten XSS koruması sağlıyor
+    }
   });
 
 export default i18n;

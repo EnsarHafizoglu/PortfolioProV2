@@ -8,6 +8,7 @@ import ScreenHeading from "../../utilities/ScreenHeading/ScreenHeading";
 import ScrollService from "../../utilities/ScrollService";
 import Animations from "../../utilities/Animations";
 import { Typewriter } from "react-simple-typewriter";
+import { useTranslation } from "react-i18next";
 
 const CustomPrevArrow = (props) => {
   const { onClick } = props;
@@ -32,14 +33,15 @@ const CustomNextArrow = (props) => {
 };
 
 export default function Certificates(props) {
+  const { t } = useTranslation();
+
   let fadeInScreenHandler = (screen) => {
     if (!screen || !screen.fadeInScreen || !props.id) return;
     if (screen.fadeInScreen !== props.id) return;
     Animations.animations.fadeInScreen(props.id);
   };
 
-  const fadeInSubscription =
-    ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
+  const fadeInSubscription = ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
 
   const settings = {
     dots: true,
@@ -54,60 +56,54 @@ export default function Certificates(props) {
     responsive: [
       {
         breakpoint: 1024,
-        settings: {
-          slidesToShow: 1,
-        },
+        settings: { slidesToShow: 1 }
       },
       {
         breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
+        settings: { slidesToShow: 1 }
+      }
+    ]
   };
 
   return (
-  <div className="certificates-container screen-container fade-in" id={props.id || ""}>
-    <ScreenHeading title={"Certificates"} subHeading={"Some Of My Certificates"} />
+    <div className="certificates-container screen-container fade-in" id={props.id || ""}>
+      <ScreenHeading title={t("certificates.title")} subHeading={t("certificates.subHeading")} />
 
-   <p className="repo-count-wrapper">
-  <span className="repo-count">
-    Toplam {certificatesData.length} adet sertifika bulunmaktadır.
-  </span>
-</p>
+      <p className="repo-count-wrapper">
+        <span className="repo-count">
+          {t("certificates.total", { count: certificatesData.length })}
+        </span>
+      </p>
 
-
-    <Slider {...settings}>
-      {certificatesData.map((cert, index) => (
-        <div key={index} className="certificate-card">
-          <img src={cert.image} alt={cert.title} className="certificate-image" />
-          <h3>{cert.title}</h3>
-          <p><b>Issued by:</b> {cert.organization}</p>
-          <p><b>Date:</b> {cert.date}</p>
-          <p>{cert.description}</p>
-          <div className="certificate-gains">
-            <h2 className="title">
-              <Typewriter
-                words={['Kazanımlarım 🧑‍💻']}
-                loop={Infinity}
-                cursor
-                cursorStyle="|"
-                typeSpeed={70}
-                deleteSpeed={50}
-                delaySpeed={1000}
-              />
-            </h2>
-            <ul>
-              {cert.gains.map((gain, i) => (
-                <li key={i}>✅ {gain}</li>
-              ))}
-            </ul>
+      <Slider {...settings}>
+        {certificatesData.map((cert, index) => (
+          <div key={index} className="certificate-card">
+            <img src={cert.image} alt={t(`certificates.${cert.key}.title`)} className="certificate-image" />
+            <h3>{t(`certificates.${cert.key}.title`)}</h3>
+            <p><b>{t("certificates.issuedBy")}:</b> {t(`certificates.${cert.key}.organization`)}</p>
+            <p><b>{t("certificates.date")}:</b> {cert.date}</p>
+            <p>{t(`certificates.${cert.key}.description`)}</p>
+            <div className="certificate-gains">
+              <h2 className="title">
+                <Typewriter
+                  words={[t("certificates.gainsTitle")]}
+                  loop={Infinity}
+                  cursor
+                  cursorStyle="|"
+                  typeSpeed={70}
+                  deleteSpeed={50}
+                  delaySpeed={1000}
+                />
+              </h2>
+              <ul>
+                {t(`certificates.${cert.key}.gains`, { returnObjects: true }).map((gain, i) => (
+                  <li key={i}>✅ {gain}</li>
+                ))}
+              </ul>
+            </div>
           </div>
-        </div>
-      ))}
-    </Slider>
-  </div>
-);
-
+        ))}
+      </Slider>
+    </div>
+  );
 }

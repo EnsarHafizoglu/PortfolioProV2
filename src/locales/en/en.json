@@ -1,0 +1,145 @@
+{
+  "greeting": "Hello, I'm",
+  "role1": "Full Stack Developer",
+  "role2": "Junior Developer 💻",
+  "about": "Hello! I'm a Software Engineering student at Konya Technical University. I also work part-time as a full stack developer at Architecht, where I strengthen my theoretical knowledge through real-world projects. I'm constantly improving my skills in web development, focusing on user-centered, fast, and scalable solutions. I'm passionate about modern technologies and strive to apply my knowledge effectively in projects.",
+  "contactMe": "Contact Me",
+  "downloadCV": "Download CV",
+  "aboutMe": {
+    "title": "About Me",
+    "subHeading": "Why Choose Me?",
+    "description": "With the knowledge and experience I've gained in frontend, backend, and database development, I focus on delivering end-to-end solutions in projects. I work meticulously on code quality, performance, and sustainability, continuously advancing my technical skills through teamwork and lifelong learning. By actively participating in real projects, I have the opportunity to turn theoretical knowledge into practical experience.",
+    "heading": "Here Are Some Highlights:",
+    "bullet1": "Full Stack Web Development",
+    "bullet2": "Responsive and Interactive Front-End Design",
+    "bullet3": "Proficiency in HTML, CSS, JavaScript, and Bootstrap",
+    "bullet4": "Developing Modern Web Applications with React",
+    "bullet5": "Experience with React Hooks and Component-Based Architecture",
+    "bullet6": "Backend Development with ASP.NET Core and MVC Framework",
+    "bullet7": "Database Management with Microsoft SQL Server",
+    "bullet8": "Understanding of Software Development Life Cycle (SDLC)",
+    "bullet9": "Experience Working with Agile and Scrum Methodologies",
+    "bullet10": "Version Control with Git and GitHub",
+    "bullet11": "Strong Problem-Solving and Algorithmic Thinking Skills"
+  },
+  "certificates": {
+    "title": "Certificates",
+    "subHeading": "Some Of My Certificates",
+    "issuedBy": "Issued by",
+    "date": "Date",
+    "gainsTitle": "My Gains 🧑‍💻",
+    "total": "Some of my GitHub repositories",
+    "cert1": {
+      "title": "Code The Future Participation Certificate",
+      "organization": "BadiWorks & Öğrenci Kariyeri",
+      "description": "I participated in the Code The Future summit, which connects students with experts in the technology sector.",
+      "gains": ["Technology Sector", "Networking", "Career Development", "Innovative Solutions"]
+    },
+    "cert2": {
+      "title": "Git and GitHub Participation Certificate",
+      "organization": "BTK Academy",
+      "description": "Completed the online training 'Version Control: Git and GitHub' organized by BTK Academy.",
+      "gains": ["Git", "GitHub", "Version Control", "Repo Management"]
+    },
+    "cert3": {
+      "title": "Complete Applied Web Development Course | .NET",
+      "organization": "Udemy",
+      "description": "Gained hands-on experience in backend and frontend integration, scalable web applications, and modern web development with ASP.NET Core, MVC, RESTful APIs, Entity Framework, and SQL Server.",
+      "gains": [".NET Core", "ASP.NET MVC", "RESTful API", "Entity Framework", "SQL Server", "Authentication & Authorization", "Frontend Integration", "Project-Based Development"]
+    },
+    "cert4": {
+      "title": "IT Orientation Program - Developer",
+      "organization": "Kuveyt Türk Academy",
+      "description": "Learned about corporate software development, technology ecosystems, and workflow management in this orientation program.",
+      "gains": ["Corporate Software Development", "Technology Ecosystem", "Workflow Management", "IT Processes"]
+    },
+    "cert5": {
+      "title": "IT Orientation Program - General",
+      "organization": "Kuveyt Türk Academy",
+      "description": "Gained basic knowledge of banking technologies, corporate IT processes, and workflows.",
+      "gains": ["Banking Technologies", "Corporate IT Processes", "Workflow Management", "Digital Training and Development"]
+    },
+    "cert6": {
+      "title": "SQL Course: From Zero to Expert",
+      "organization": "Udemy",
+      "description": "Acquired fundamental and advanced skills in SQL database management, data analysis, relational structures, and query optimization.",
+      "gains": ["SQL", "Data Analysis", "Relational Database Management", "Advanced SQL Queries", "Data Manipulation"]
+    },
+    "cert7": {
+      "title": "Job Club Participation Certificate",
+      "organization": "Turkish Employment Agency (İŞKUR)",
+      "description": "Learned job search processes, career planning, interview techniques, and workplace success strategies.",
+      "gains": ["Career Planning", "Job Search Techniques", "Interview Strategies", "Professional Development"]
+    },
+    "cert8": {
+      "title": "Complete Java Developer Course (42 Hours)",
+      "organization": "Udemy",
+      "description": "Learned Java programming from scratch to advanced, including OOP and application development practices.",
+      "gains": ["Java Basics", "Object-Oriented Programming (OOP)", "Application Development", "Programming Practices"]
+    },
+    "cert9": {
+      "title": "C# Programming Language: All Levels",
+      "organization": "Udemy",
+      "description": "Learned C# from beginner to advanced, developing console and Windows applications with practical exercises.",
+      "gains": ["C# Basics", "Object-Oriented Programming", "Application Development", "Database Connections"]
+    },
+    "cert10": {
+      "title": "Corporate Project Development in .NET",
+      "organization": "Udemy",
+      "description": "Gained knowledge and experience in enterprise-level project development using .NET architecture.",
+      "gains": [".NET Architecture", "Layered Architecture", "Enterprise App Development", "Project Management"]
+    },
+    "cert11": {
+      "title": "C Programming: From Zero to Advanced (25+ Hours)",
+      "organization": "Udemy",
+      "description": "Learned C programming with practical projects, including algorithm development and memory management.",
+      "gains": ["C Basics", "Memory Management", "Algorithm Development", "Practical Projects"]
+    },
+    "cert12": {
+      "title": "Design Patterns",
+      "organization": "Udemy",
+      "description": "Learned to apply design patterns to solve recurring software development problems and improve code quality.",
+      "gains": ["Structural, Behavioral, and Creational Patterns", "Code Quality Improvement", "Sustainable Development", "Design Principles"]
+    }
+    
+  },
+   "contact": {
+    "title": "Contact Me",
+    "subHeading": "Let's Keep In Touch",
+    "getInTouch": "Get In Touch 📧",
+    "sendEmailHere": "Send Your Email Here!",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send",
+    "sending": "Sending...",
+    "success": "Your feedback has been sent successfully.",
+    "errors": {
+      "fillAllFields": "Please fill in all fields!",
+      "tryAgain": "An error occurred. Please try again."
+    }
+  },
+  
+  "github": {
+    "title": "GitHub Repositories",
+    "subHeading": "Some of my GitHub repos",
+    "totalRepos": "Total of {{count}} repositories found",
+    "noDescription": "No description",
+    "showMore": "Show More",
+    "showLess": "Show Less"
+  },
+  
+  
+  "header": {
+    "Home": "Home",
+    "AboutMe": "About Me",
+    "Resume": "Resume",
+    "GithubRepos": "GitHub Repositories",
+    "Certificates": "Certificates",
+    "ContactMe": "Contact Me",
+    "Testimonial": "Testimonials"
+  }
+
+
+  
+}

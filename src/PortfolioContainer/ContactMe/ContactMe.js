@@ -9,8 +9,11 @@ import ScrollService from "../../utilities/ScrollService";
 import Animations from "../../utilities/Animations";
 import Footer from "../../PortfolioContainer/Footer/Footer";
 import "./ContactMe.css";
+import { useTranslation } from "react-i18next";
 
 export default function ContactMe(props) {
+  const { t } = useTranslation();
+
   let fadeInScreenHandler = (screen) => {
     if (!screen || !screen.fadeInScreen || !props.id) return;
     if (screen.fadeInScreen !== props.id) return;
@@ -25,13 +28,12 @@ export default function ContactMe(props) {
   const [banner, setBanner] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // ✅ .env backend base URL (SONUNA / YOK!)
   const apiUrl = process.env.REACT_APP_API_URL || "https://geribildirimapi.onrender.com/api/geribildirim";
 
   const submitForm = async (e) => {
     e.preventDefault();
     if (!name.trim() || !email.trim() || !message.trim()) {
-      const errorMessage = "Lütfen tüm alanları doldurun!";
+      const errorMessage = t("contact.errors.fillAllFields");
       setBanner(errorMessage);
       toast.error(errorMessage);
       return;
@@ -44,26 +46,25 @@ export default function ContactMe(props) {
         email: email,
         mesaj: message,
       }, {
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
       });
 
       if (res.status === 200 || res.status === 201) {
-        setBanner("Geri bildiriminiz başarıyla gönderildi.");
-        toast.success("Geri bildiriminiz başarıyla gönderildi.");
+        const successMessage = t("contact.success");
+        setBanner(successMessage);
+        toast.success(successMessage);
         setName("");
         setEmail("");
         setMessage("");
       } else {
-        console.warn(`Sunucu beklenmeyen yanıt verdi: ${res.status}`);
-        setBanner("Bir hata oluştu. Lütfen tekrar deneyin.");
-        toast.error("Bir hata oluştu. Lütfen tekrar deneyin.");
+        const failMessage = t("contact.errors.tryAgain");
+        setBanner(failMessage);
+        toast.error(failMessage);
       }
     } catch (error) {
-      console.error("Form gönderme hatası:", error);
-      setBanner("Bir hata oluştu. Lütfen tekrar deneyin.");
-      toast.error("Bir hata oluştu. Lütfen tekrar deneyin.");
+      const failMessage = t("contact.errors.tryAgain");
+      setBanner(failMessage);
+      toast.error(failMessage);
     } finally {
       setLoading(false);
     }
@@ -71,12 +72,12 @@ export default function ContactMe(props) {
 
   return (
     <div className="main-container fade-in" id={props.id || ""}>
-      <ScreenHeading subHeading={"Let's Keep In Touch"} title={"Contact Me"} />
+      <ScreenHeading subHeading={t("contact.subHeading")} title={t("contact.title")} />
       <div className="central-form">
         <div className="col">
           <h2 className="title">
             <Typewriter
-              words={["Get In Touch 📧"]}
+              words={[t("contact.getInTouch")]}
               loop={Infinity}
               cursor
               cursorStyle="|"
@@ -97,27 +98,27 @@ export default function ContactMe(props) {
         </div>
         <div className="back-form">
           <div className="img-back">
-            <h4>Send Your Email Here!</h4>
+            <h4>{t("contact.sendEmailHere")}</h4>
             <img src={imgBack} alt="not found" />
           </div>
           <form onSubmit={submitForm}>
             <p>{banner}</p>
-            <label>Name</label>
+            <label>{t("contact.name")}</label>
             <input type="text" onChange={(e) => setName(e.target.value)} value={name} />
-            <label>Email</label>
+            <label>{t("contact.email")}</label>
             <input type="email" onChange={(e) => setEmail(e.target.value)} value={email} />
-            <label>Message</label>
+            <label>{t("contact.message")}</label>
             <textarea onChange={(e) => setMessage(e.target.value)} value={message} />
             <div className="send-btn">
               <button type="submit" disabled={loading}>
                 {loading ? (
                   <span>
-                    Sending...
+                    {t("contact.sending")}
                     <img src={load1} alt="loading" className="load" />
                   </span>
                 ) : (
                   <>
-                    Send <i className="fa fa-paper-plane" />
+                    {t("contact.send")} <i className="fa fa-paper-plane" />
                   </>
                 )}
               </button>

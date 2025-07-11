@@ -3,8 +3,10 @@ import ScreenHeading from "../../utilities/ScreenHeading/ScreenHeading";
 import ScrollService from "../../utilities/ScrollService";
 import Animations from "../../utilities/Animations";
 import "./GithubRepos.css";
+import { useTranslation } from "react-i18next";
 
 export default function GithubRepos(props) {
+  const { t } = useTranslation();
   const [repos, setRepos] = useState([]);
   const [showAll, setShowAll] = useState(false);
 
@@ -36,15 +38,15 @@ export default function GithubRepos(props) {
   return (
     <div>
       <ScreenHeading
-        title="GitHub Repositories"
-        subHeading="Some of my GitHub repos"
+        title={t("github.title")}
+        subHeading={t("github.subHeading")}
       />
-   <section className="github-section fade-in" id={props.id || ""}>
-  <div className="repo-count-wrapper">
-    <p className="repo-count">
-      Toplam {repos.length} adet repo bulundu
-    </p>
-  </div>
+      <section className="github-section fade-in" id={props.id || ""}>
+        <div className="repo-count-wrapper">
+          <p className="repo-count">
+            {t("github.totalRepos", { count: repos.length })}
+          </p>
+        </div>
 
         <div className="container github-grid">
           {visibleRepos.map((repo) => (
@@ -54,8 +56,8 @@ export default function GithubRepos(props) {
                   {repo.name}
                 </a>
               </h5>
-              <p>{repo.description || "Açıklama yok"}</p>
-              <span>⭐ {repo.stargazers_count }</span>
+              <p>{repo.description || t("github.noDescription")}</p>
+              <span>⭐ {repo.stargazers_count}</span>
             </div>
           ))}
         </div>
@@ -63,7 +65,7 @@ export default function GithubRepos(props) {
         {repos.length > 6 && (
           <div className="github-toggle">
             <button onClick={() => setShowAll(!showAll)}>
-              {showAll ? "Show Less" : "Show More"}
+              {showAll ? t("github.showLess") : t("github.showMore")}
             </button>
           </div>
         )}

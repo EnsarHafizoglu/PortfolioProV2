@@ -3,8 +3,11 @@ import ScreenHeading from "../../utilities/ScreenHeading/ScreenHeading";
 import ScrollService from "../../utilities/ScrollService";
 import Animations from "../../utilities/Animations";
 import "./AboutMe.css";
+import { useTranslation } from "react-i18next";
 
 export default function AboutMe(props) {
+  const { t } = useTranslation();
+
   let fadeInScreenHandler = (screen) => {
     if (screen.fadeInScreen !== props.id) return;
     Animations.animations.fadeInScreen(props.id);
@@ -12,28 +15,22 @@ export default function AboutMe(props) {
   const fadeInSubscription =
     ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
 
-  const SCREEN_CONSTSANTS = {
-    description:
-      "Frontend, backend ve veritabanı alanlarında edindiğim bilgi ve deneyimlerle projelerde uçtan uca çözümler geliştirmeye odaklanıyorum. Kod kalitesi, performans ve sürdürülebilirlik konularında titizlikle çalışıyor; takım içi iş birliği ve sürekli öğrenme yaklaşımıyla teknik yetkinliğimi her geçen gün ileriye taşıyorum. Gerçek projelerde aktif rol alarak teorik bilgilerimi pratiğe dönüştürme fırsatı buluyorum.",
-    highlights: {
-     bullets: [
-  "Full Stack Web Geliştirme",
-  "Duyarlı (Responsive) ve Etkileşimli Ön Yüz Tasarımı",
-  "HTML, CSS, JavaScript ve Bootstrap Kullanımı",
-  "React ile Modern Web Uygulamaları Geliştirme",
-  "React Hooks ve Bileşen (Component) Tabanlı Mimari",
-  "ASP.NET Core ve MVC Framework ile Backend Geliştirme",
-  "Microsoft SQL Server ile Veritabanı Yönetimi",
-  "Yazılım Geliştirme Yaşam Döngüsü (SDLC) Konusunda Bilgi",
-  "Agile ve Scrum Metodolojileri ile Çalışma Deneyimi",
-  "Versiyon Kontrol Sistemleri (Git, GitHub) Kullanımı",
-  "Problem Çözme ve Algoritma Geliştirme Yetkinliği"
-],
-heading: "İşte Öne Çıkan Bazı Yeteneklerim:"
-    },
-  };
+  const bullets = [
+    t("aboutMe.bullet1"),
+    t("aboutMe.bullet2"),
+    t("aboutMe.bullet3"),
+    t("aboutMe.bullet4"),
+    t("aboutMe.bullet5"),
+    t("aboutMe.bullet6"),
+    t("aboutMe.bullet7"),
+    t("aboutMe.bullet8"),
+    t("aboutMe.bullet9"),
+    t("aboutMe.bullet10"),
+    t("aboutMe.bullet11")
+  ];
+
   const renderHighlight = () => {
-    return SCREEN_CONSTSANTS.highlights.bullets.map((value, i) => (
+    return bullets.map((value, i) => (
       <div className="highlight" key={i}>
         <div className="highlight-blob"></div>
         <span>{value}</span>
@@ -43,20 +40,20 @@ heading: "İşte Öne Çıkan Bazı Yeteneklerim:"
 
   return (
     <div
-      className="about-me-container screen-container fade-in "
+      className="about-me-container screen-container fade-in"
       id={props.id || ""}
     >
       <div className="about-me-parent">
-        <ScreenHeading title={"About Me"} subHeading={"Why Choose Me?"} />
+        <ScreenHeading title={t("aboutMe.title")} subHeading={t("aboutMe.subHeading")} />
         <div className="about-me-card">
           <div className="about-me-profile"></div>
           <div className="about-me-details">
             <span className="about-me-description">
-              {SCREEN_CONSTSANTS.description}
+              {t("aboutMe.description")}
             </span>
             <div className="about-me-highlights">
               <div className="highlight-heading">
-                <span>{SCREEN_CONSTSANTS.highlights.heading}</span>
+                <span>{t("aboutMe.heading")}</span>
               </div>
               {renderHighlight()}
             </div>
@@ -65,11 +62,10 @@ heading: "İşte Öne Çıkan Bazı Yeteneklerim:"
                 className="btn primary-btn"
                 onClick={() => ScrollService.scrollHandler.scrollToHireMe()}
               >
-                {" "}
-                Contact Me{" "}
+                {t("aboutMe.contactMe")}
               </button>
               <a href="CV.pdf" download="CV.pdf">
-                <button className="btn highlighted-btn">Download CV</button>
+                <button className="btn highlighted-btn">{t("aboutMe.downloadCV")}</button>
               </a>
             </div>
           </div>
