@@ -25,7 +25,8 @@ export default function ContactMe(props) {
   const [banner, setBanner] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const apiUrl = process.env.REACT_APP_API_URL || "https://geribildirimapi.onrender.com/api/geribildirim";
+  // 🌟 .env'den backend base URL al (SONUNA / YOK!)
+  const apiUrl = process.env.REACT_APP_API_URL || "https://geribildirimapi.onrender.com";
 
   const submitForm = async (e) => {
     e.preventDefault();
@@ -44,7 +45,7 @@ export default function ContactMe(props) {
         email: email,
       };
 
-      const res = await axios.post(`${apiUrl}/gonder`, data, {
+      const res = await axios.post(`${apiUrl}/api/geribildirim/gonder`, data, {
         headers: {
           "Content-Type": "application/json",
         },
