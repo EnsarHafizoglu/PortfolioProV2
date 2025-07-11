@@ -45,7 +45,7 @@ export default function ContactMe(props) {
         email: email,
       };
 
-      const res = await axios.post(`${apiUrl}/api/geribildirim/gonder`, data, {
+      const res = await axios.post(`${apiUrl}/gonder`, data, {
         headers: {
           "Content-Type": "application/json",
         },
