@@ -25,7 +25,7 @@ export default function ContactMe(props) {
   const [banner, setBanner] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // 🌟 .env backend base URL (SONUNA / YOK!)
+  // ✅ .env backend base URL (SONUNA / YOK!)
   const apiUrl = process.env.REACT_APP_API_URL || "https://geribildirimapi.onrender.com/api/geribildirim";
 
   const submitForm = async (e) => {
@@ -41,7 +41,7 @@ export default function ContactMe(props) {
       setLoading(true);
       const res = await axios.post(`${apiUrl}/gonder`, {
         adSoyad: name,
-        email,
+        email: email,
         mesaj: message,
       }, {
         headers: {
@@ -49,14 +49,16 @@ export default function ContactMe(props) {
         },
       });
 
-      if (res.status === 200) {
+      if (res.status === 200 || res.status === 201) {
         setBanner("Geri bildiriminiz başarıyla gönderildi.");
         toast.success("Geri bildiriminiz başarıyla gönderildi.");
         setName("");
         setEmail("");
         setMessage("");
       } else {
-        throw new Error(`Sunucu hatası: ${res.status}`);
+        console.warn(`Sunucu beklenmeyen yanıt verdi: ${res.status}`);
+        setBanner("Bir hata oluştu. Lütfen tekrar deneyin.");
+        toast.error("Bir hata oluştu. Lütfen tekrar deneyin.");
       }
     } catch (error) {
       console.error("Form gönderme hatası:", error);
@@ -108,11 +110,15 @@ export default function ContactMe(props) {
             <textarea onChange={(e) => setMessage(e.target.value)} value={message} />
             <div className="send-btn">
               <button type="submit" disabled={loading}>
-                Send <i className="fa fa-paper-plane" />
-                {loading && (
-                  <b className="load">
-                    <img src={load1} alt="loading" />
-                  </b>
+                {loading ? (
+                  <span>
+                    Sending...
+                    <img src={load1} alt="loading" className="load" />
+                  </span>
+                ) : (
+                  <>
+                    Send <i className="fa fa-paper-plane" />
+                  </>
                 )}
               </button>
             </div>
