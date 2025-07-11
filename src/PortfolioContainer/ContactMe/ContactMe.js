@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
-import { Typewriter } from 'react-simple-typewriter';
+import { Typewriter } from "react-simple-typewriter";
 import imgBack from "../../../src/images/mailz.jpeg";
 import load1 from "../../../src/images/load2.gif";
 import ScreenHeading from "../../utilities/ScreenHeading/ScreenHeading";
@@ -23,14 +23,10 @@ export default function ContactMe(props) {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [banner, setBanner] = useState("");
-  const [bool, setBool] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  // 🌟 API URL .env'den okunuyor, yoksa sabit URL
+  // 🌟 API URL .env'den
   const apiUrl = process.env.REACT_APP_API_URL || "https://geribildirimapi.onrender.com/api/geribildirim";
-
-  const handleName = (e) => setName(e.target.value);
-  const handleEmail = (e) => setEmail(e.target.value);
-  const handleMessage = (e) => setMessage(e.target.value);
 
   const submitForm = async (e) => {
     e.preventDefault();
@@ -42,16 +38,17 @@ export default function ContactMe(props) {
     }
 
     try {
-      let data = {
+      setLoading(true);
+
+      const data = {
         adSoyad: name,
         mesaj: message,
-        email: email
+        email: email,
       };
 
-      setBool(true);
-
-      const res = await axios.post(`${apiUrl}/gonder`, data);
-      console.log("Response:", res);
+      const res = await axios.post(`${apiUrl}/gonder`, data, {
+        withCredentials: false,
+      });
 
       if (res.status === 200) {
         setBanner("Geri bildiriminiz başarıyla gönderildi.");
@@ -59,24 +56,26 @@ export default function ContactMe(props) {
         setName("");
         setEmail("");
         setMessage("");
+      } else {
+        throw new Error("Sunucu hatası");
       }
     } catch (error) {
-      console.log("Form gönderme hatası:", error);
+      console.error("Form gönderme hatası:", error);
       setBanner("Bir hata oluştu. Lütfen tekrar deneyin.");
       toast.error("Bir hata oluştu. Lütfen tekrar deneyin.");
     } finally {
-      setBool(false);
+      setLoading(false);
     }
   };
 
   return (
     <div className="main-container fade-in" id={props.id || ""}>
-      <ScreenHeading subHeading={"Lets Keep In Touch"} title={"Contact Me"} />
+      <ScreenHeading subHeading={"Let's Keep In Touch"} title={"Contact Me"} />
       <div className="central-form">
         <div className="col">
           <h2 className="title">
-            <Typewriter 
-              words={['Get In Touch 📧']}
+            <Typewriter
+              words={["Get In Touch 📧"]}
               loop={Infinity}
               cursor
               cursorStyle="|"
@@ -98,21 +97,20 @@ export default function ContactMe(props) {
         <div className="back-form">
           <div className="img-back">
             <h4>Send Your Email Here!</h4>
-            <img src={imgBack} alt="image not found" />
+            <img src={imgBack} alt="not found" />
           </div>
           <form onSubmit={submitForm}>
             <p>{banner}</p>
             <label>Name</label>
-            <input type="text" onChange={handleName} value={name} />
+            <input type="text" onChange={(e) => setName(e.target.value)} value={name} />
             <label>Email</label>
-            <input type="email" onChange={handleEmail} value={email} />
+            <input type="email" onChange={(e) => setEmail(e.target.value)} value={email} />
             <label>Message</label>
-            <textarea onChange={handleMessage} value={message} />
+            <textarea onChange={(e) => setMessage(e.target.value)} value={message} />
             <div className="send-btn">
-              <button type="submit">
-                Send
-                <i className="fa fa-paper-plane" />
-                {bool && (
+              <button type="submit" disabled={loading}>
+                Send <i className="fa fa-paper-plane" />
+                {loading && (
                   <b className="load">
                     <img src={load1} alt="loading" />
                   </b>
