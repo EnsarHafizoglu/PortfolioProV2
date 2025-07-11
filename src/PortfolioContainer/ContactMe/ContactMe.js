@@ -17,8 +17,7 @@ export default function ContactMe(props) {
     Animations.animations.fadeInScreen(props.id);
   };
 
-  const fadeInSubscription =
-    ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
+  ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -26,45 +25,37 @@ export default function ContactMe(props) {
   const [banner, setBanner] = useState("");
   const [bool, setBool] = useState(false);
 
-  const handleName = (e) => {
-    setName(e.target.value);
-  };
-  const handleEmail = (e) => {
-    setEmail(e.target.value);
-  };
-  const handleMessage = (e) => {
-    setMessage(e.target.value);
-  };
-  console.log(name);
+  // 🌟 API URL .env'den okunuyor, yoksa sabit URL
+  const apiUrl = process.env.REACT_APP_API_URL || "https://geribildirimapi.onrender.com/api/geribildirim";
+
+  const handleName = (e) => setName(e.target.value);
+  const handleEmail = (e) => setEmail(e.target.value);
+  const handleMessage = (e) => setMessage(e.target.value);
+
   const submitForm = async (e) => {
-    console.log("Form Data:", { name, email, message });
     e.preventDefault();
     if (!name.trim() || !email.trim() || !message.trim()) {
       const errorMessage = "Lütfen tüm alanları doldurun!";
       setBanner(errorMessage);
       toast.error(errorMessage);
-      return; // Hata varsa HTTP isteğini göndermeden fonksiyonu durdur
+      return;
     }
-  
+
     try {
       let data = {
-  adSoyad: name,
-  mesaj: message,
-  email: email
+        adSoyad: name,
+        mesaj: message,
+        email: email
       };
-  
+
       setBool(true);
-  
-      // 2️⃣ **Boş alanlar yoksa HTTP isteği gönder**
-      const res = await axios.post(`https://localhost:44369/api/geribildirim/gonder`, data);
+
+      const res = await axios.post(`${apiUrl}/gonder`, data);
       console.log("Response:", res);
-  
+
       if (res.status === 200) {
-        setBanner(res.data.msg);
-        toast.success(res.data.msg);
-        setBool(false);
-  
-        // Formu sıfırla
+        setBanner("Geri bildiriminiz başarıyla gönderildi.");
+        toast.success("Geri bildiriminiz başarıyla gönderildi.");
         setName("");
         setEmail("");
         setMessage("");
@@ -73,36 +64,36 @@ export default function ContactMe(props) {
       console.log("Form gönderme hatası:", error);
       setBanner("Bir hata oluştu. Lütfen tekrar deneyin.");
       toast.error("Bir hata oluştu. Lütfen tekrar deneyin.");
+    } finally {
       setBool(false);
     }
   };
+
   return (
     <div className="main-container fade-in" id={props.id || ""}>
       <ScreenHeading subHeading={"Lets Keep In Touch"} title={"Contact Me"} />
       <div className="central-form">
         <div className="col">
           <h2 className="title">
-          <Typewriter 
-           words={[ 'Get In Touch 📧']}
-           loop={Infinity}
-           cursor
-           cursorStyle='|'
-           typeSpeed={70}
-           deleteSpeed={50}
-           delaySpeed={1000} />
-          </h2>{" "}
-         
+            <Typewriter 
+              words={['Get In Touch 📧']}
+              loop={Infinity}
+              cursor
+              cursorStyle="|"
+              typeSpeed={70}
+              deleteSpeed={50}
+              delaySpeed={1000}
+            />
+          </h2>
           <a href="mailto:ensarportfoliopro@gmail.com">
             <i className="fa fa-google-plus-square" />
           </a>
-
           <a href="https://www.instagram.com/ensar_hfzoglu/">
             <i className="fa fa-instagram" />
           </a>
           <a href="https://github.com/EnsarHafizoglu">
-                <i className="fa fa-github" />
-           </a>
-         
+            <i className="fa fa-github" />
+          </a>
         </div>
         <div className="back-form">
           <div className="img-back">
@@ -111,25 +102,20 @@ export default function ContactMe(props) {
           </div>
           <form onSubmit={submitForm}>
             <p>{banner}</p>
-            <label htmlFor="name">Name</label>
+            <label>Name</label>
             <input type="text" onChange={handleName} value={name} />
-
-            <label htmlFor="email">Email</label>
+            <label>Email</label>
             <input type="email" onChange={handleEmail} value={email} />
-
-            <label htmlFor="message">Message</label>
-            <textarea type="text" onChange={handleMessage} value={message} />
-
+            <label>Message</label>
+            <textarea onChange={handleMessage} value={message} />
             <div className="send-btn">
               <button type="submit">
                 Send
                 <i className="fa fa-paper-plane" />
-                {bool ? (
+                {bool && (
                   <b className="load">
-                    <img src={load1} alt="image not responding" />
+                    <img src={load1} alt="loading" />
                   </b>
-                ) : (
-                  ""
                 )}
               </button>
             </div>
