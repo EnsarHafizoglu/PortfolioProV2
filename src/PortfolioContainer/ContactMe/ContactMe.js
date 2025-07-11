@@ -25,8 +25,8 @@ export default function ContactMe(props) {
   const [banner, setBanner] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // 🌟 .env'den backend base URL al (SONUNA / YOK!)
-  const apiUrl = process.env.REACT_APP_API_URL || "https://geribildirimapi.onrender.com";
+  // 🌟 .env backend base URL (SONUNA / YOK!)
+  const apiUrl = process.env.REACT_APP_API_URL || "https://geribildirimapi.onrender.com/api/geribildirim";
 
   const submitForm = async (e) => {
     e.preventDefault();
@@ -39,19 +39,17 @@ export default function ContactMe(props) {
 
     try {
       setLoading(true);
-      const data = {
+      const res = await axios.post(`${apiUrl}/gonder`, {
         adSoyad: name,
+        email,
         mesaj: message,
-        email: email,
-      };
-
-      const res = await axios.post(`${apiUrl}/gonder`, data, {
+      }, {
         headers: {
           "Content-Type": "application/json",
         },
       });
 
-      if (res.status === 200 || res.status === 201) {
+      if (res.status === 200) {
         setBanner("Geri bildiriminiz başarıyla gönderildi.");
         toast.success("Geri bildiriminiz başarıyla gönderildi.");
         setName("");
