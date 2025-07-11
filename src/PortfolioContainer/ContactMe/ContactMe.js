@@ -46,7 +46,7 @@ export default function ContactMe(props) {
         email: email,
       };
 
-      const res = await axios.post(`${apiUrl}/gonder`, data, {
+      const res = await axios.post(`https://geribildirimapi.onrender.com/gonder`, data, {
         withCredentials: false,
       });
 
