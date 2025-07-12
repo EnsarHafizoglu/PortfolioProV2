@@ -138,7 +138,45 @@
     "Certificates": "Certificates",
     "ContactMe": "Contact Me",
     "Testimonial": "Testimonials"
-  }
+  },
+  
+  "resume": {
+    "title": "Resume",
+    "subHeading": "My formal Bio Details",
+    "education": "Education",
+    "workHistory": "Work History",
+    "programmingSkills": "Programming Skills",
+    "projects": "Projects",
+    "interests": "Interests",
+    "school1": "Fatsa Anatolian High School, ORDU",
+    "school1Desc": "Fatsa Anatolian High School, Fatsa / ORDU",
+    "school2": "Konya Technical University",
+    "school2Desc": "Konya Technical University, Selçuklu / KONYA",
+    "school2Date": "Ongoing",
+    "workplace": "Architecht IT Systems",
+    "role": "FULL STACK DEVELOPER - PART TIME",
+    "ongoing": "Ongoing",
+    "workDesc1": "I work as a Part-Time Full Stack Developer at Architecht, a 100% subsidiary of Kuveyt Türk, within the Tekno Campus program. I actively participate in corporate projects on both frontend (React) and backend (C#, ASP.NET Core), contributing to the UI and business logic layers.",
+    "workDesc2": "Currently working with C#, React, JavaScript, and SQL Server; improving my technical skills by gaining hands-on experience on real projects. I play an active role in agile sprints within the team.",
+    "techsUsed": "Technologies used",
+    "project1": "Student Tracking System",
+    "project1Desc": "A system developed to monitor students' information, absenteeism, and academic performance.",
+    "project1Techs": "Technologies used: ASP.NET Core, MVC Framework, Microsoft SQL Server, HTML, CSS, JavaScript, Bootstrap",
+    "project2": "Robotics Application Development with ROS",
+    "project2Desc": "A robotics system developed using ROS (Robot Operating System), working on basic motion commands, sensor data processing, and autonomous tasks. Tested in simulation environment.",
+    "project2Techs": "Technologies used: ROS (Noetic), Python, Gazebo, RViz",
+    "project3": "Customer Segmentation Model Training",
+    "project3Desc": "A segmentation model trained to identify different customer groups by analyzing customer data. K-means algorithm used for segmenting, followed by visualization and interpretation.",
+    "project3Techs": "Technologies used: Python, Pandas, Scikit-learn, Matplotlib, Seaborn",
+    "interest1": "Spending Time in Nature",
+    "interest1Desc": "Hiking, camping, spending time in the village, and participating in outdoor activities.",
+    "interest2": "Exploring New Places",
+    "interest2Desc": "Exploring new places, joining social events, and spending time together.",
+    "interest3": "Playing Computer Games",
+    "interest3Desc": "Playing strategy, FPS, and adventure games, and exploring the gaming world."
+  
+}
+
 
 
   

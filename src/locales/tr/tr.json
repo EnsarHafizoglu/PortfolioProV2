@@ -7,6 +7,7 @@
   "downloadCV": "CV İndir",
   "aboutMe": {
     "title": "Hakkımda",
+    "downloadCV": "CV İndir",
     "subHeading": "Neden Ben?",
     "description": "Frontend, backend ve veritabanı alanlarında edindiğim bilgi ve deneyimlerle projelerde uçtan uca çözümler geliştirmeye odaklanıyorum. Kod kalitesi, performans ve sürdürülebilirlik konularında titizlikle çalışıyor; takım içi iş birliği ve sürekli öğrenme yaklaşımıyla teknik yetkinliğimi her geçen gün ileriye taşıyorum. Gerçek projelerde aktif rol alarak teorik bilgilerimi pratiğe dönüştürme fırsatı buluyorum.",
     "heading": "İşte Öne Çıkan Bazı Yeteneklerim:",
@@ -135,7 +136,45 @@
     "Certificates": "Sertifikalar",
     "ContactMe": "İletişim Kur",
     "Testimonial" : "Referanslar"
+  },
+  
+  "resume": {
+    "title": "Özgeçmiş",
+    "subHeading": "Resmi Biyografi Bilgilerim",
+    "education": "Eğitim",
+    "workHistory": "İş Deneyimi",
+    "programmingSkills": "Programlama Becerileri",
+    "projects": "Projeler",
+    "interests": "Hobilerim",
+    "school1": "Fatsa Anadolu Lisesi, ORDU",
+    "school1Desc": "Fatsa Anadolu Lisesi, Fatsa / ORDU",
+    "school2": "Konya Teknik Üniversitesi",
+    "school2Desc": "Konya Teknik Üniversitesi, Selçuklu / KONYA",
+    "school2Date": "Devam Ediyor",
+    "workplace": "Architecht Bilişim Sistemleri",
+    "role": "FULL STACK DEVELOPER - YARI ZAMANLI",
+    "ongoing": "Devam Ediyor",
+    "workDesc1": "Kuveyt Türk’ün %100 iştiraki olan Architecht Bilişim Sistemleri’nde, Tekno Kampüs programı kapsamında Part-Time Full Stack Developer olarak çalışıyorum. Kurumsal projelerde frontend (React) ve backend (C#, ASP.NET Core) geliştirme süreçlerinde aktif olarak yer alıyor, uygulamaların hem arayüz hem de iş mantığı katmanlarına katkı sağlıyorum.",
+    "workDesc2": "Güncel olarak C#, React, JavaScript ve SQL Server gibi teknolojilerle çalışıyor; gerçek projeler üzerinde deneyim kazanarak teknik becerilerimi geliştirmeye devam ediyorum. Agile metodolojisiyle yürütülen sprint süreçlerinde takım içinde aktif rol alıyorum.",
+    "techsUsed": "Kullanılan Teknolojiler",
+    "project1": "Öğrenci Takip Sistemi",
+    "project1Desc": "Öğrencilerin bilgilerini, devamsızlık durumlarını ve akademik performanslarını takip etmek için geliştirilmiş bir sistem.",
+    "project1Techs": "Kullanılan Teknolojiler: ASP.NET Core, MVC Framework, Microsoft SQL Server, HTML, CSS, JavaScript, Bootstrap",
+    "project2": "ROS ile Robotik Uygulama Geliştirme",
+    "project2Desc": "ROS (Robot Operating System) altyapısını kullanarak temel hareket komutları, sensör verisi işleme ve otonom görevler üzerinde çalışan bir robotik sistem geliştirildi. Simülasyon ortamında testler yapıldı.",
+    "project2Techs": "Kullanılan Teknolojiler: ROS (Noetic), Python, Gazebo, RViz",
+    "project3": "Müşteri Segmentasyonu ile Model Eğitimi",
+    "project3Desc": "Müşteri verilerini analiz ederek farklı müşteri gruplarını belirlemek amacıyla segmentasyon modeli eğitildi. K-means algoritması ile segmentler oluşturulup, görselleştirme ve yorumlama adımları gerçekleştirildi.",
+    "project3Techs": "Kullanılan Teknolojiler: Python, Pandas, Scikit-learn, Matplotlib, Seaborn",
+    "interest1": "Doğada Vakit Geçirmek",
+    "interest1Desc": "Doğa yürüyüşleri yapmak, kamp kurmak, köyde vakit geçirmek ve açık hava aktivitelerine katılmak.",
+    "interest2": "Yeni Yerler Keşfetmek",
+    "interest2Desc": "Yeni yerler keşfetmek, sosyal etkinliklere katılmak ve birlikte vakit geçirmek.",
+    "interest3": "Bilgisayar Oyunları Oynamak",
+    "interest3Desc": "Strateji, FPS ve macera türündeki oyunları oynamak ve oyun dünyasını keşfetmek."
   }
+
+
 
 
 

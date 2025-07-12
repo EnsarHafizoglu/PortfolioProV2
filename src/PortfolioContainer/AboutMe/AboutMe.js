@@ -62,10 +62,10 @@ export default function AboutMe(props) {
                 className="btn primary-btn"
                 onClick={() => ScrollService.scrollHandler.scrollToHireMe()}
               >
-                {t("aboutMe.contactMe")}
+                {t("contactMe")}  
               </button>
               <a href="CV.pdf" download="CV.pdf">
-                <button className="btn highlighted-btn">{t("aboutMe.downloadCV")}</button>
+                <button className="btn highlighted-btn">{t("downloadCV")}</button>
               </a>
             </div>
           </div>

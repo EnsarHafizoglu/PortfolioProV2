@@ -60,7 +60,7 @@ export default function Header() {
     <div className="header-container">
       <div className="header-parent">
         <div className="header-logo">
-          <span>Ensar</span>
+          <span>Ensar Hafızoğlu</span>
         </div>
 
        <div className="language-switch-header">
