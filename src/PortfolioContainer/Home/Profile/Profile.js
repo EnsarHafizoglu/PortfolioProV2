@@ -47,6 +47,9 @@ export default function Profile() {
               <a href="https://github.com/EnsarHafizoglu">
                 <i className="fa fa-github" />
               </a>
+              <a href="https://www.linkedin.com/in/ensar-hafızoğlu-125415250">
+                <i className="fa fa-linkedin" />
+              </a>
             </div>
           </div>
 
