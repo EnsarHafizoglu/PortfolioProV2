@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import ScreenHeading from "../../utilities/ScreenHeading/ScreenHeading";
 import ScrollService from "../../utilities/ScrollService";
 import Animations from "../../utilities/Animations";
@@ -8,6 +9,8 @@ import AliTunc from "../../../src/img/Testimonial/AliTunc.jpg";
 import YaşarUğur from "../../../src/img/Testimonial/YasarUgur.jpg";
 
 export default function Testimonial(props) {
+  const { t } = useTranslation();
+
   let fadeInScreenHandler = (screen) => {
     if (screen.fadeInScreen !== props.id) return;
     Animations.animations.fadeInScreen(props.id);
@@ -30,15 +33,15 @@ export default function Testimonial(props) {
       company: "Architecht",
       image: YaşarUğur,
     },
-
+    
     {
       name: "Mustafa CAN",
       role: "Software Engineer",
       company: "Architecht",
       image: DefaultProfilePhoto,
     },
-     {
-      name: "Enes Yıldız",
+    {
+      name: "Enes YILDIZ",
       role: "Software Engineer",
       company: "Architecht",
       image: DefaultProfilePhoto,
@@ -48,8 +51,8 @@ export default function Testimonial(props) {
   return (
     <div>
       <ScreenHeading
-        title={"Testimonial"}
-        subHeading={"Peaple who reference me"}
+        title={t("testimonial.title")}
+        subHeading={t("testimonial.subHeading")}
       />
       <section className="testimonial-section fade-in" id={props.id || ""}>
         <div className="container testimonial-grid">
@@ -58,7 +61,9 @@ export default function Testimonial(props) {
               <div className="client-info">
                 <img src={person.image} alt={person.name} />
                 <h5>{person.name}</h5>
-                <p>{person.role} @ {person.company}</p>
+                <p>
+                  {person.role} @ {person.company}
+                </p>
               </div>
             </div>
           ))}

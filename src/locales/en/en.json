@@ -175,7 +175,11 @@
     "interest3": "Playing Computer Games",
     "interest3Desc": "Playing strategy, FPS, and adventure games, and exploring the gaming world."
   
-}
+},
+"testimonial": {
+    "title": "Testimonials",
+    "subHeading": "People who reference me"
+  }
 
 
 
